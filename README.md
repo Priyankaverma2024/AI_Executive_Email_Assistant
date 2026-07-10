@@ -1,7 +1,7 @@
 # Personal AI Email Reply Agent
 
 An agent that reads your unread Gmail, classifies each email's intent, drafts a
-professional reply in your voice using Claude, and saves it to **Drafts** —
+professional reply in your voice using Gemini, and saves it to **Drafts** —
 never auto-sends. You always review before hitting Send.
 
 ## How it works
@@ -13,10 +13,10 @@ Gmail Inbox (unread)
 email_fetcher.py    -> pulls sender, subject, body
       │
       ▼
-email_classifier.py -> Claude labels intent (meeting_request, follow_up, complaint, etc.)
+email_classifier.py -> Gemini labels intent (meeting_request, follow_up, complaint, etc.)
       │
       ▼
-reply_generator.py  -> Claude drafts a reply, tone matched to category + your signature
+reply_generator.py  -> Gemini drafts a reply, tone matched to category + your signature
       │
       ▼
 draft_manager.py    -> saves reply as a Gmail Draft (human-in-the-loop, safe by design)
